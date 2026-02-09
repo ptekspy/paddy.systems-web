@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
@@ -51,11 +52,7 @@ export default function ContactPage() {
         >
           <div className="grid gap-6">
             <div className="grid gap-2">
-              <label className="text-sm font-semibold text-white" htmlFor="name">
-                <Typography as="span" variant="small" color="white" weight="semibold">
-                  Name
-                </Typography>
-              </label>
+              <Label htmlFor="name">Name</Label>
               <Input
                 id="name"
                 name="name"
@@ -64,11 +61,7 @@ export default function ContactPage() {
               />
             </div>
             <div className="grid gap-2">
-              <label className="text-sm font-semibold text-white" htmlFor="email">
-                <Typography as="span" variant="small" color="white" weight="semibold">
-                  Work email
-                </Typography>
-              </label>
+              <Label htmlFor="email">Work email</Label>
               <Input
                 id="email"
                 name="email"
@@ -78,11 +71,7 @@ export default function ContactPage() {
               />
             </div>
             <div className="grid gap-2">
-              <label className="text-sm font-semibold text-white" htmlFor="reason">
-                <Typography as="span" variant="small" color="white" weight="semibold">
-                  Reason for contact
-                </Typography>
-              </label>
+              <Label htmlFor="reason">Reason for contact</Label>
               <Select id="reason" name="reason" required>
                 <option value="" disabled>
                   Select a reason
@@ -96,11 +85,7 @@ export default function ContactPage() {
               </Select>
             </div>
             <div className="grid gap-2">
-              <label className="text-sm font-semibold text-white" htmlFor="details">
-                <Typography as="span" variant="small" color="white" weight="semibold">
-                  Change summary
-                </Typography>
-              </label>
+              <Label htmlFor="details">Change summary</Label>
               <Textarea
                 id="details"
                 name="details"
