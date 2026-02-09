@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
@@ -5,6 +6,30 @@ import { posts } from "../posts";
 
 export function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
+}
+
+export function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Metadata {
+  const post = posts.find((item) => item.slug === params.slug);
+
+  if (!post) {
+    return {
+      title: "Writing — paddy.systems",
+    };
+  }
+
+  return {
+    title: `${post.title} — paddy.systems`,
+    description: post.excerpt,
+    openGraph: {
+      title: `${post.title} — paddy.systems`,
+      description: post.excerpt,
+      type: "article",
+    },
+  };
 }
 
 export default function WritingPostPage({

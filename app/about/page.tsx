@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import { Typography } from "@/components/ui/typography";
+
+export const metadata: Metadata = {
+  title: "About — paddy.systems",
+  description:
+    "About paddy.systems and the change-readiness assessment approach.",
+  openGraph: {
+    title: "About — paddy.systems",
+    description:
+      "About paddy.systems and the change-readiness assessment approach.",
+    type: "website",
+  },
+};
 
 export default function AboutPage() {
   return (

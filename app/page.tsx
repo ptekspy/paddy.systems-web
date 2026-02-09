@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
+
+export const metadata: Metadata = {
+  title: "paddy.systems — Change-readiness assessments",
+  description:
+    "Plan complex change without discovering risk in production. Readiness assessments that surface hidden constraints and produce a sequenced plan.",
+  openGraph: {
+    title: "paddy.systems — Change-readiness assessments",
+    description:
+      "Readiness assessments that surface hidden constraints and produce a sequenced plan.",
+    type: "website",
+  },
+};
 
 const stats = [
   {

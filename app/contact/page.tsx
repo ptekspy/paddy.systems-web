@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
+
+export const metadata: Metadata = {
+  title: "Contact — paddy.systems",
+  description:
+    "Request a change-readiness assessment. Share a short description of the change you’re considering.",
+  openGraph: {
+    title: "Contact — paddy.systems",
+    description:
+      "Request a change-readiness assessment. Share a short description of the change you’re considering.",
+    type: "website",
+  },
+};
 
 export default function ContactPage() {
   return (

@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
+
+export const metadata: Metadata = {
+  title: "White-labelling readiness — paddy.systems",
+  description:
+    "Know what will break before it breaks. Identify architectural and operational risks of white-labelling before you commit.",
+  openGraph: {
+    title: "White-labelling readiness — paddy.systems",
+    description:
+      "Know what will break before it breaks. Identify architectural and operational risks of white-labelling before you commit.",
+    type: "website",
+  },
+};
 
 export default function WhiteLabellingReadinessPage() {
   return (

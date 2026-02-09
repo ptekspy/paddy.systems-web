@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import { Typography } from "@/components/ui/typography";
+
+export const metadata: Metadata = {
+  title: "Privacy — paddy.systems",
+  description:
+    "Privacy policy for paddy.systems and how contact form data is handled.",
+  openGraph: {
+    title: "Privacy — paddy.systems",
+    description:
+      "Privacy policy for paddy.systems and how contact form data is handled.",
+    type: "website",
+  },
+};
 
 export default function PrivacyPage() {
   return (

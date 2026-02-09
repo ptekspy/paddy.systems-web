@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   title: "paddy.systems — Change-readiness assessments",
   description:
     "Plan complex change without discovering risk in production. Readiness assessments that surface hidden constraints and produce a sequenced plan.",
+  metadataBase: new URL("https://paddy.systems"),
   openGraph: {
     title: "paddy.systems — Change-readiness assessments",
     description:

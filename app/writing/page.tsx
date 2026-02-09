@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import { Typography } from "@/components/ui/typography";
 import { posts } from "./posts";
+
+export const metadata: Metadata = {
+  title: "Writing — paddy.systems",
+  description:
+    "Short, structured posts about change-readiness, white-labelling, and sequencing complex platform work.",
+  openGraph: {
+    title: "Writing — paddy.systems",
+    description:
+      "Short, structured posts about change-readiness, white-labelling, and sequencing complex platform work.",
+    type: "website",
+  },
+};
 
 export default function WritingPage() {
   return (
