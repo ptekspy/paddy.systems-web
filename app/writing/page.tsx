@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Card } from "@/components/ui/card";
 import { Typography } from "@/components/ui/typography";
 import { posts } from "./posts";
 
@@ -38,10 +39,13 @@ export default function WritingPage() {
 
       <div className="grid gap-6">
         {posts.map((post) => (
-          <a
+          <Card
             key={post.slug}
+            as="a"
             href={`/writing/${post.slug}`}
-            className="rounded-2xl border border-white/10 bg-zinc-950 p-6 text-white transition hover:border-white/30"
+            tone="black"
+            padding="md"
+            className="rounded-2xl text-white transition hover:border-white/30"
           >
             <div className="flex flex-wrap items-center gap-3">
               <Typography
@@ -72,7 +76,7 @@ export default function WritingPage() {
             <Typography as="p" variant="small" color="white" className="mt-3 text-zinc-300">
               {post.excerpt}
             </Typography>
-          </a>
+          </Card>
         ))}
       </div>
     </div>

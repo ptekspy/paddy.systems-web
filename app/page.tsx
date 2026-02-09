@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
+import { CallToAction } from "@/components/cta";
+import { Card } from "@/components/ui/card";
 import { Typography } from "@/components/ui/typography";
 
 export const metadata: Metadata = {
@@ -57,7 +59,7 @@ const outputs = [
 export default function Home() {
   return (
     <div className="flex flex-col gap-20">
-      <section className="rounded-[32px] border border-white/10 bg-zinc-950 px-8 py-14 text-white md:px-12">
+      <Card tone="black" padding="xl" className="rounded-[32px] px-8 py-14 md:px-12">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="flex flex-col gap-6">
             <Typography
@@ -78,7 +80,7 @@ export default function Home() {
             </Typography>
             <div className="flex flex-wrap gap-4">
               <Button as="a" href="/contact" variant="contained" color="white">
-                Request an assessment
+                Book a review
               </Button>
               <Button
                 as="a"
@@ -90,7 +92,7 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+          <Card tone="black" padding="lg" className="bg-white/5">
             <Typography
               as="p"
               variant="caption"
@@ -115,8 +117,92 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </div>
+          </Card>
         </div>
+      </Card>
+
+      <Card tone="white" padding="md" className="md:p-8">
+        <div className="flex flex-col gap-3">
+          <Typography as="h2" variant="h5" color="black" weight="semibold">
+            What this helps you decide
+          </Typography>
+          <ul className="space-y-2">
+            <li>
+              <Typography as="span" variant="small" color="black" className="text-zinc-600">
+                Whether the change is viable on your timeline.
+              </Typography>
+            </li>
+            <li>
+              <Typography as="span" variant="small" color="black" className="text-zinc-600">
+                Which risks must be addressed before you commit.
+              </Typography>
+            </li>
+            <li>
+              <Typography as="span" variant="small" color="black" className="text-zinc-600">
+                What to do first to keep the programme safe.
+              </Typography>
+            </li>
+          </ul>
+        </div>
+      </Card>
+
+      <section className="grid gap-8 lg:grid-cols-2">
+        <Card tone="black" padding="lg">
+          <Typography as="h2" variant="h3" color="white" weight="semibold">
+            What you get
+          </Typography>
+          <ul className="mt-6 space-y-4">
+            <li className="flex gap-3">
+              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+              <Typography as="span" variant="small" color="white" className="text-zinc-300">
+                Summary of risks.
+              </Typography>
+            </li>
+            <li className="flex gap-3">
+              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+              <Typography as="span" variant="small" color="white" className="text-zinc-300">
+                Suggested sequence and priorities.
+              </Typography>
+            </li>
+            <li className="flex gap-3">
+              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+              <Typography as="span" variant="small" color="white" className="text-zinc-300">
+                Follow-up notes delivered within 24–48h.
+              </Typography>
+            </li>
+          </ul>
+        </Card>
+        <Card tone="black" padding="lg">
+          <Typography as="h2" variant="h3" color="white" weight="semibold">
+            Typical topics
+          </Typography>
+          <ul className="mt-6 space-y-4">
+            <li className="flex gap-3">
+              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+              <Typography as="span" variant="small" color="white" className="text-zinc-300">
+                Migrations and platform re-architecture.
+              </Typography>
+            </li>
+            <li className="flex gap-3">
+              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+              <Typography as="span" variant="small" color="white" className="text-zinc-300">
+                White-labelling and tenancy boundaries.
+              </Typography>
+            </li>
+            <li className="flex gap-3">
+              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+              <Typography as="span" variant="small" color="white" className="text-zinc-300">
+                Performance under load.
+              </Typography>
+            </li>
+            <li className="flex gap-3">
+              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+              <Typography as="span" variant="small" color="white" className="text-zinc-300">
+                Reliability and observability gaps.
+              </Typography>
+            </li>
+          </ul>
+        </Card>
       </section>
 
       <section className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
@@ -129,7 +215,7 @@ export default function Home() {
             discover the risk too late: config sprawl, feature divergence,
             boundary drift, and support drag.
           </Typography>
-          <div className="grid gap-4 rounded-3xl border border-white/10 bg-zinc-950 p-6 text-white">
+          <Card tone="black" padding="md" className="grid gap-4">
             <Typography as="p" variant="small" color="white" weight="semibold">
               Common signals
             </Typography>
@@ -150,9 +236,9 @@ export default function Home() {
                 </Typography>
               </li>
             </ul>
-          </div>
+          </Card>
         </div>
-        <div className="rounded-3xl border border-white/10 bg-zinc-950 p-8 text-white">
+        <Card tone="black" padding="lg">
           <Typography
             as="p"
             variant="caption"
@@ -172,16 +258,13 @@ export default function Home() {
               </li>
             ))}
           </ul>
-        </div>
+        </Card>
       </section>
 
-      <section className="rounded-3xl border border-zinc-200 bg-white p-10">
+      <Card tone="white" padding="xl">
         <div className="grid gap-8 lg:grid-cols-3">
           {steps.map((step, index) => (
-            <div
-              key={step.title}
-              className="rounded-2xl border border-white/10 bg-zinc-950 p-6 text-white"
-            >
+            <Card key={step.title} tone="black" padding="md" className="rounded-2xl">
               <Typography
                 as="p"
                 variant="caption"
@@ -197,13 +280,13 @@ export default function Home() {
               <Typography as="p" variant="small" color="white" className="mt-3 text-zinc-300">
                 {step.body}
               </Typography>
-            </div>
+            </Card>
           ))}
         </div>
-      </section>
+      </Card>
 
       <section className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="rounded-3xl border border-white/10 bg-zinc-950 p-10 text-white">
+        <Card tone="black" padding="xl">
           <Typography as="h2" variant="h3" color="white" weight="semibold">
             White-labelling readiness assessment
           </Typography>
@@ -220,8 +303,8 @@ export default function Home() {
           >
             Explore the assessment
           </Button>
-        </div>
-        <div className="rounded-3xl border border-white/10 bg-zinc-950 p-10 text-white">
+        </Card>
+        <Card tone="black" padding="xl">
           <Typography as="h2" variant="h3" color="white" weight="semibold">
             FAQ
           </Typography>
@@ -252,26 +335,16 @@ export default function Home() {
               </Typography>
             </div>
           </div>
-        </div>
+        </Card>
       </section>
 
-      <section className="rounded-3xl border border-white/10 bg-zinc-950 p-10 text-center text-white">
-        <Typography as="h2" variant="h3" color="white" weight="semibold">
-          Ready to de-risk your next change?
-        </Typography>
-        <Typography as="p" variant="p" color="white" className="mt-3 text-zinc-300">
-          Request an assessment and get a plan you can defend.
-        </Typography>
-        <Button
-          as="a"
-          href="/contact"
-          variant="contained"
-          color="white"
-          className="mt-6"
-        >
-          Request an assessment
-        </Button>
-      </section>
+      <CallToAction
+        title="Ready to de-risk your next change?"
+        description="Request an assessment and get a plan you can defend."
+        href="/contact"
+        buttonLabel="Book a review"
+        tone="black"
+      />
     </div>
   );
 }

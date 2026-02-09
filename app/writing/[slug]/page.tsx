@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Button } from "@/components/ui/button";
+import { CallToAction } from "@/components/cta";
 import { Typography } from "@/components/ui/typography";
 import { posts } from "../posts";
 
@@ -107,24 +107,14 @@ export default function WritingPostPage({
         })}
       </div>
 
-      <div className="rounded-2xl border border-white/10 bg-zinc-950 p-6 text-white">
-        <Typography as="p" variant="small" color="white" weight="semibold">
-          Next step
-        </Typography>
-        <Typography as="p" variant="small" color="white" className="mt-2 text-zinc-300">
-          If you’re planning a high-risk change, request a readiness assessment
-          and get a defensible plan.
-        </Typography>
-        <Button
-          as="a"
-          href="/contact"
-          variant="contained"
-          color="white"
-          className="mt-4"
-        >
-          Request an assessment
-        </Button>
-      </div>
+      <CallToAction
+        title="Next step"
+        description="If you’re planning a high-risk change, request a readiness assessment and get a defensible plan."
+        href="/contact"
+        buttonLabel="Request an assessment"
+        tone="black"
+        align="left"
+      />
     </article>
   );
 }

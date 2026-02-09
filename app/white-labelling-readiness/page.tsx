@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
+import { CallToAction } from "@/components/cta";
+import { Card } from "@/components/ui/card";
 import { Typography } from "@/components/ui/typography";
 
 export const metadata: Metadata = {
@@ -44,7 +46,7 @@ export default function WhiteLabellingReadinessPage() {
             </Button>
           </div>
         </div>
-        <div className="rounded-3xl border border-white/10 bg-zinc-950 p-8 text-white">
+        <Card tone="black" padding="lg">
           <Typography
             as="p"
             variant="caption"
@@ -82,11 +84,11 @@ export default function WhiteLabellingReadinessPage() {
               </li>
             </ul>
           </div>
-        </div>
+        </Card>
       </section>
 
       <section className="grid gap-8 md:grid-cols-2">
-        <div className="rounded-2xl border border-white/10 bg-zinc-950 p-6 text-white">
+        <Card tone="black" padding="md" className="rounded-2xl">
           <Typography as="h2" variant="h4" color="white" weight="semibold">
             Assessment outputs
           </Typography>
@@ -112,8 +114,8 @@ export default function WhiteLabellingReadinessPage() {
               </Typography>
             </li>
           </ul>
-        </div>
-        <div className="rounded-2xl border border-white/10 bg-zinc-950 p-6 text-white">
+        </Card>
+        <Card tone="black" padding="md" className="rounded-2xl">
           <Typography as="h2" variant="h4" color="white" weight="semibold">
             Example sections
           </Typography>
@@ -134,25 +136,16 @@ export default function WhiteLabellingReadinessPage() {
               </Typography>
             </li>
           </ul>
-        </div>
+        </Card>
       </section>
 
-      <section className="rounded-3xl border border-white/10 bg-zinc-950 p-10 text-white">
-        <div className="flex flex-col gap-4">
-          <Typography as="h2" variant="h3" color="white" weight="semibold">
-            Request the assessment
-          </Typography>
-          <Typography as="p" variant="p" color="white" className="text-zinc-300">
-            Get a clear picture of what will break, what will slow you down, and
-            what to do first.
-          </Typography>
-          <div>
-            <Button as="a" href="/contact" variant="contained" color="white">
-              Request an assessment
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CallToAction
+        title="Request the assessment"
+        description="Get a clear picture of what will break, what will slow you down, and what to do first."
+        href="/contact"
+        buttonLabel="Request an assessment"
+        tone="black"
+      />
     </div>
   );
 }

@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Select } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
+import { Card } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: "Contact — paddy.systems",
@@ -37,8 +41,10 @@ export default function ContactPage() {
       </section>
 
       <section className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-        <form
-          className="rounded-3xl border border-white/10 bg-zinc-950 p-8 text-white"
+        <Card
+          tone="black"
+          padding="lg"
+          as="form"
           action="mailto:hello@paddy.systems"
           method="post"
           encType="text/plain"
@@ -50,11 +56,10 @@ export default function ContactPage() {
                   Name
                 </Typography>
               </label>
-              <input
+              <Input
                 id="name"
                 name="name"
                 required
-                className="rounded-2xl border border-white/10 bg-zinc-900 px-4 py-3 text-sm text-white placeholder:text-zinc-500"
                 placeholder="Your name"
               />
             </div>
@@ -64,14 +69,31 @@ export default function ContactPage() {
                   Work email
                 </Typography>
               </label>
-              <input
+              <Input
                 id="email"
                 name="email"
                 type="email"
                 required
-                className="rounded-2xl border border-white/10 bg-zinc-900 px-4 py-3 text-sm text-white placeholder:text-zinc-500"
                 placeholder="you@company.com"
               />
+            </div>
+            <div className="grid gap-2">
+              <label className="text-sm font-semibold text-white" htmlFor="reason">
+                <Typography as="span" variant="small" color="white" weight="semibold">
+                  Reason for contact
+                </Typography>
+              </label>
+              <Select id="reason" name="reason" required>
+                <option value="" disabled>
+                  Select a reason
+                </option>
+                <option value="assessment">Book a review</option>
+                <option value="white-labelling">White-labelling readiness</option>
+                <option value="migration">Migration planning</option>
+                <option value="performance">Performance under load</option>
+                <option value="reliability">Reliability / observability</option>
+                <option value="other">Other</option>
+              </Select>
             </div>
             <div className="grid gap-2">
               <label className="text-sm font-semibold text-white" htmlFor="details">
@@ -79,12 +101,11 @@ export default function ContactPage() {
                   Change summary
                 </Typography>
               </label>
-              <textarea
+              <Textarea
                 id="details"
                 name="details"
                 required
                 rows={5}
-                className="rounded-2xl border border-white/10 bg-zinc-900 px-4 py-3 text-sm text-white placeholder:text-zinc-500"
                 placeholder="What are you planning to change? What deadline or risk worries you?"
               />
             </div>
@@ -92,10 +113,10 @@ export default function ContactPage() {
               Send request
             </Button>
           </div>
-        </form>
+        </Card>
 
         <div className="flex flex-col gap-6">
-          <div className="rounded-3xl border border-white/10 bg-zinc-950 p-6 text-white">
+          <Card tone="black" padding="md">
             <Typography as="h2" variant="h5" color="white" weight="semibold">
               What to expect
             </Typography>
@@ -116,8 +137,8 @@ export default function ContactPage() {
                 </Typography>
               </li>
             </ul>
-          </div>
-          <div className="rounded-3xl border border-white/10 bg-zinc-950 p-6 text-white">
+          </Card>
+          <Card tone="black" padding="md">
             <Typography as="h2" variant="h5" color="white" weight="semibold">
               Prefer email?
             </Typography>
@@ -133,7 +154,7 @@ export default function ContactPage() {
               </a>
               .
             </Typography>
-          </div>
+          </Card>
         </div>
       </section>
     </div>
