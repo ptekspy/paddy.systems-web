@@ -1,90 +1,142 @@
+import { Button } from "@/components/ui/button";
+import { Typography } from "@/components/ui/typography";
+
 export default function WhiteLabellingReadinessPage() {
   return (
     <div className="flex flex-col gap-16">
       <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="flex flex-col gap-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+          <Typography
+            as="p"
+            variant="caption"
+            color="black"
+            weight="semibold"
+            className="tracking-[0.28em] text-zinc-500"
+          >
             Assessment
-          </p>
-          <h1 className="text-4xl font-semibold text-zinc-900 md:text-5xl">
+          </Typography>
+          <Typography as="h1" variant="h1" color="black" weight="semibold">
             White-labelling readiness assessment
-          </h1>
-          <p className="text-lg text-zinc-600">
+          </Typography>
+          <Typography as="p" variant="body" color="black" className="text-zinc-600">
             Know what will break before it breaks. Identify the architectural
             and operational risks of white-labelling before you commit.
-          </p>
+          </Typography>
           <div className="flex flex-wrap items-center gap-4">
-            <a
-              href="/contact"
-              className="rounded-full bg-zinc-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800"
-            >
+            <Button as="a" href="/contact" variant="contained" color="black">
               Request an assessment
-            </a>
-            <a
-              href="/contact"
-              className="text-sm font-semibold text-zinc-700 hover:text-zinc-900"
-            >
+            </Button>
+            <Button as="a" href="/contact" variant="outlined" color="black">
               Send me a sample report →
-            </a>
+            </Button>
           </div>
         </div>
-        <div className="rounded-3xl border border-zinc-200 bg-white p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+        <div className="rounded-3xl border border-white/10 bg-zinc-950 p-8 text-white">
+          <Typography
+            as="p"
+            variant="caption"
+            color="white"
+            weight="semibold"
+            className="tracking-[0.28em] text-zinc-400"
+          >
             The trap
-          </p>
-          <div className="mt-6 space-y-4 text-sm text-zinc-700">
-            <p>
+          </Typography>
+          <div className="mt-6 space-y-4">
+            <Typography as="p" variant="small" color="white" className="text-zinc-300">
               Teams assume white-labelling is configurable UX. The reality is a
               change to your data model, auth boundaries, and support surface.
-            </p>
+            </Typography>
             <ul className="list-disc space-y-2 pl-5">
-              <li>Configuration sprawl</li>
-              <li>Feature divergence</li>
-              <li>Auth and tenant boundary drift</li>
-              <li>Debugging and support complexity</li>
+              <li>
+                <Typography as="span" variant="small" color="white" className="text-zinc-300">
+                  Configuration sprawl
+                </Typography>
+              </li>
+              <li>
+                <Typography as="span" variant="small" color="white" className="text-zinc-300">
+                  Feature divergence
+                </Typography>
+              </li>
+              <li>
+                <Typography as="span" variant="small" color="white" className="text-zinc-300">
+                  Auth and tenant boundary drift
+                </Typography>
+              </li>
+              <li>
+                <Typography as="span" variant="small" color="white" className="text-zinc-300">
+                  Debugging and support complexity
+                </Typography>
+              </li>
             </ul>
           </div>
         </div>
       </section>
 
       <section className="grid gap-8 md:grid-cols-2">
-        <div className="rounded-2xl border border-zinc-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-zinc-900">
+        <div className="rounded-2xl border border-white/10 bg-zinc-950 p-6 text-white">
+          <Typography as="h2" variant="h4" color="white" weight="semibold">
             Assessment outputs
-          </h2>
-          <ul className="mt-4 space-y-3 text-sm text-zinc-600">
-            <li>Tenant boundary decisions and trade-offs.</li>
-            <li>Risk hotspots with mitigation strategies.</li>
-            <li>Sequencing plan and proof milestones.</li>
-            <li>“Don’t do this” list for anti-patterns.</li>
+          </Typography>
+          <ul className="mt-4 space-y-3">
+            <li>
+              <Typography as="span" variant="small" color="white" className="text-zinc-300">
+                Tenant boundary decisions and trade-offs.
+              </Typography>
+            </li>
+            <li>
+              <Typography as="span" variant="small" color="white" className="text-zinc-300">
+                Risk hotspots with mitigation strategies.
+              </Typography>
+            </li>
+            <li>
+              <Typography as="span" variant="small" color="white" className="text-zinc-300">
+                Sequencing plan and proof milestones.
+              </Typography>
+            </li>
+            <li>
+              <Typography as="span" variant="small" color="white" className="text-zinc-300">
+                “Don’t do this” list for anti-patterns.
+              </Typography>
+            </li>
           </ul>
         </div>
-        <div className="rounded-2xl border border-zinc-200 bg-white p-6">
-          <h2 className="text-xl font-semibold text-zinc-900">
+        <div className="rounded-2xl border border-white/10 bg-zinc-950 p-6 text-white">
+          <Typography as="h2" variant="h4" color="white" weight="semibold">
             Example sections
-          </h2>
-          <ul className="mt-4 space-y-3 text-sm text-zinc-600">
-            <li>Sample risk statements and impact grading.</li>
-            <li>Plan headings and phase sequencing.</li>
-            <li>Decision matrix for tenant separation.</li>
+          </Typography>
+          <ul className="mt-4 space-y-3">
+            <li>
+              <Typography as="span" variant="small" color="white" className="text-zinc-300">
+                Sample risk statements and impact grading.
+              </Typography>
+            </li>
+            <li>
+              <Typography as="span" variant="small" color="white" className="text-zinc-300">
+                Plan headings and phase sequencing.
+              </Typography>
+            </li>
+            <li>
+              <Typography as="span" variant="small" color="white" className="text-zinc-300">
+                Decision matrix for tenant separation.
+              </Typography>
+            </li>
           </ul>
         </div>
       </section>
 
-      <section className="rounded-3xl border border-zinc-200 bg-zinc-900 p-10 text-white">
+      <section className="rounded-3xl border border-white/10 bg-zinc-950 p-10 text-white">
         <div className="flex flex-col gap-4">
-          <h2 className="text-2xl font-semibold">Request the assessment</h2>
-          <p className="text-zinc-200">
+          <Typography as="h2" variant="h3" color="white" weight="semibold">
+            Request the assessment
+          </Typography>
+          <Typography as="p" variant="p" color="white" className="text-zinc-300">
             Get a clear picture of what will break, what will slow you down, and
             what to do first.
-          </p>
+          </Typography>
           <div>
-            <a
-              href="/contact"
-              className="inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100"
-            >
+            <Button as="a" href="/contact" variant="contained" color="white">
               Request an assessment
-            </a>
+            </Button>
           </div>
         </div>
       </section>

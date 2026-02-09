@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Button } from "@/components/ui/button";
+import { Typography } from "@/components/ui/typography";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -32,56 +34,79 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-950 text-zinc-100`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-zinc-900`}
       >
         <div className="min-h-screen">
-          <header className="sticky top-0 z-20 border-b border-white/10 bg-zinc-950/80 backdrop-blur">
+          <header className="sticky top-0 z-20 border-b border-zinc-200/70 bg-white/80 backdrop-blur">
             <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
-              <a href="/" className="text-base font-semibold tracking-tight text-white">
-                paddy.systems
+              <a href="/" className="tracking-tight text-zinc-900">
+                <Typography as="span" variant="h6" weight="semibold">
+                  paddy.systems
+                </Typography>
               </a>
-              <nav className="hidden items-center gap-6 text-sm font-medium text-zinc-400 md:flex">
-                <a href="/white-labelling-readiness" className="hover:text-white">
-                  Product
+              <nav className="hidden items-center gap-6 text-sm font-medium text-zinc-600 md:flex">
+                <a href="/white-labelling-readiness" className="hover:text-zinc-900">
+                  <Typography as="span" variant="small" weight="medium">
+                    Product
+                  </Typography>
                 </a>
-                <a href="/writing" className="hover:text-white">
-                  Writing
+                <a href="/writing" className="hover:text-zinc-900">
+                  <Typography as="span" variant="small" weight="medium">
+                    Writing
+                  </Typography>
                 </a>
-                <a href="/contact" className="hover:text-white">
-                  Contact
+                <a href="/contact" className="hover:text-zinc-900">
+                  <Typography as="span" variant="small" weight="medium">
+                    Contact
+                  </Typography>
                 </a>
               </nav>
               <div className="flex items-center gap-3">
-                <a
+                <Button
+                  as="a"
                   href="/contact"
-                  className="rounded-full border border-white/30 px-4 py-2 text-sm font-semibold text-white transition hover:border-white"
+                  variant="outlined"
+                  color="black"
+                  size="sm"
                 >
                   Request an assessment
-                </a>
+                </Button>
               </div>
             </div>
           </header>
           <main className="mx-auto w-full max-w-6xl px-6 py-16">
             {children}
           </main>
-          <footer className="border-t border-white/10 bg-zinc-950">
-            <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 py-10 text-sm text-zinc-400 md:flex-row md:items-center md:justify-between">
+          <footer className="border-t border-zinc-200/70 bg-white">
+            <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 py-10 text-sm text-zinc-600 md:flex-row md:items-center md:justify-between">
               <div>
-                <p className="font-medium text-white">paddy.systems</p>
-                <p>Change-readiness assessments for high-risk product change.</p>
+                <Typography as="p" variant="small" weight="semibold" color="black">
+                  paddy.systems
+                </Typography>
+                <Typography as="p" variant="small">
+                  Change-readiness assessments for high-risk product change.
+                </Typography>
               </div>
               <div className="flex flex-wrap gap-4">
-                <a href="/white-labelling-readiness" className="hover:text-white">
-                  White-labelling readiness
+                <a href="/white-labelling-readiness" className="hover:text-zinc-900">
+                  <Typography as="span" variant="small">
+                    White-labelling readiness
+                  </Typography>
                 </a>
-                <a href="/writing" className="hover:text-white">
-                  Writing
+                <a href="/writing" className="hover:text-zinc-900">
+                  <Typography as="span" variant="small">
+                    Writing
+                  </Typography>
                 </a>
-                <a href="/contact" className="hover:text-white">
-                  Contact
+                <a href="/contact" className="hover:text-zinc-900">
+                  <Typography as="span" variant="small">
+                    Contact
+                  </Typography>
                 </a>
-                <a href="/privacy" className="hover:text-white">
-                  Privacy
+                <a href="/privacy" className="hover:text-zinc-900">
+                  <Typography as="span" variant="small">
+                    Privacy
+                  </Typography>
                 </a>
               </div>
             </div>

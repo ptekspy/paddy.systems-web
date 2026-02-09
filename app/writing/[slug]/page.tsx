@@ -1,4 +1,6 @@
 import { notFound } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Typography } from "@/components/ui/typography";
 import { posts } from "../posts";
 
 export function generateStaticParams() {
@@ -19,51 +21,84 @@ export default function WritingPostPage({
   return (
     <article className="mx-auto flex max-w-3xl flex-col gap-8">
       <header className="flex flex-col gap-3">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+        <Typography
+          as="p"
+          variant="caption"
+          color="black"
+          weight="semibold"
+          className="tracking-[0.28em] text-zinc-500"
+        >
           Writing
-        </p>
-        <h1 className="text-3xl font-semibold text-zinc-900 md:text-4xl">
+        </Typography>
+        <Typography as="h1" variant="h2" color="black" weight="semibold">
           {post.title}
-        </h1>
-        <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-zinc-500">
-          <span>{post.date}</span>
-          <span>•</span>
-          <span>{post.readTime}</span>
+        </Typography>
+        <div className="flex flex-wrap items-center gap-3">
+          <Typography
+            as="span"
+            variant="caption"
+            color="black"
+            weight="semibold"
+            className="tracking-[0.2em] text-zinc-500"
+          >
+            {post.date}
+          </Typography>
+          <Typography as="span" variant="caption" color="black" className="text-zinc-500">
+            •
+          </Typography>
+          <Typography
+            as="span"
+            variant="caption"
+            color="black"
+            weight="semibold"
+            className="tracking-[0.2em] text-zinc-500"
+          >
+            {post.readTime}
+          </Typography>
         </div>
       </header>
 
-      <div className="flex flex-col gap-6 text-lg text-zinc-700">
+      <div className="flex flex-col gap-6">
         {post.sections.map((section, index) => {
           if (section.type === "list") {
             return (
-              <ul key={index} className="list-disc space-y-2 pl-6 text-base">
+              <ul key={index} className="list-disc space-y-2 pl-6">
                 {section.content.map((item) => (
-                  <li key={item}>{item}</li>
+                  <li key={item}>
+                    <Typography as="span" variant="p" color="black">
+                      {item}
+                    </Typography>
+                  </li>
                 ))}
               </ul>
             );
           }
 
           return (
-            <p key={index} className="text-base leading-7">
+            <Typography key={index} as="p" variant="p" color="black">
               {section.content}
-            </p>
+            </Typography>
           );
         })}
       </div>
 
-      <div className="rounded-2xl border border-zinc-200 bg-white p-6">
-        <p className="text-sm font-semibold text-zinc-900">Next step</p>
-        <p className="mt-2 text-sm text-zinc-600">
+      <div className="rounded-2xl border border-white/10 bg-zinc-950 p-6 text-white">
+        <Typography as="p" variant="small" color="white" weight="semibold">
+          Next step
+        </Typography>
+        <Typography as="p" variant="small" color="white" className="mt-2 text-zinc-300">
           If you’re planning a high-risk change, request a readiness assessment
           and get a defensible plan.
-        </p>
-        <a
+        </Typography>
+        <Button
+          as="a"
           href="/contact"
-          className="mt-4 inline-flex rounded-full bg-zinc-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-zinc-800"
+          variant="contained"
+          color="white"
+          className="mt-4"
         >
           Request an assessment
-        </a>
+        </Button>
       </div>
     </article>
   );
