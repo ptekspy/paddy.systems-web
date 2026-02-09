@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Flex } from "@/components/ui/flex";
 import { Typography } from "@/components/ui/typography";
 
 export const metadata: Metadata = {
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto flex max-w-3xl flex-col gap-6">
+    <Flex direction="column" gap="lg" className="mx-auto max-w-3xl">
       <Typography as="h1" variant="h2" color="black" weight="semibold">
         About
       </Typography>
@@ -28,6 +29,6 @@ export default function AboutPage() {
         The work is grounded in production systems experience and focuses on
         turning ambiguous initiatives into clear decisions.
       </Typography>
-    </div>
+    </Flex>
   );
 }

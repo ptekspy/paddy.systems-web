@@ -1,5 +1,6 @@
 import * as React from "react";
 import { twMerge } from "tailwind-merge";
+import { Flex } from "@/components/ui/flex";
 import { Typography } from "@/components/ui/typography";
 
 type BulletListProps = {
@@ -15,12 +16,12 @@ export function BulletList({ items, tone = "black", className }: BulletListProps
   return (
     <ul className={twMerge("space-y-3", className)}>
       {items.map((item) => (
-        <li key={item} className="flex gap-3">
+        <Flex as="li" key={item} gap="base">
           <span className={twMerge("mt-2 h-2 w-2 rounded-full", bulletColor)} />
           <Typography as="span" variant="small" color={tone} className={textColor}>
             {item}
           </Typography>
-        </li>
+        </Flex>
       ))}
     </ul>
   );

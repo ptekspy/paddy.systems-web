@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Flex } from "@/components/ui/flex";
 import { Typography } from "@/components/ui/typography";
 
 export const metadata: Metadata = {
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="mx-auto flex max-w-3xl flex-col gap-6">
+    <Flex direction="column" gap="lg" className="mx-auto max-w-3xl">
       <Typography as="h1" variant="h2" color="black" weight="semibold">
         Privacy
       </Typography>
@@ -36,6 +37,6 @@ export default function PrivacyPage() {
         </a>
         .
       </Typography>
-    </div>
+    </Flex>
   );
 }

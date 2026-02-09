@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Card } from "@/components/ui/card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Typography } from "@/components/ui/typography";
+import { Flex } from "@/components/ui/flex";
 import { posts } from "./posts";
 
 export const metadata: Metadata = {
@@ -18,8 +19,8 @@ export const metadata: Metadata = {
 
 export default function WritingPage() {
   return (
-    <div className="flex flex-col gap-10">
-      <section className="flex flex-col gap-4">
+    <Flex direction="column" className="gap-10">
+      <Flex as="section" direction="column" gap="md">
         <Typography
           as="p"
           variant="caption"
@@ -33,7 +34,7 @@ export default function WritingPage() {
           title="Systems planning notes"
           subtitle="Short, structured posts about change-readiness, white-labelling, and sequencing complex platform work."
         />
-      </section>
+      </Flex>
 
       <div className="grid gap-6">
         {posts.map((post) => (
@@ -45,7 +46,7 @@ export default function WritingPage() {
             padding="md"
             className="rounded-2xl text-white transition hover:border-white/30"
           >
-            <div className="flex flex-wrap items-center gap-3">
+            <Flex wrap="wrap" align="center" gap="base">
               <Typography
                 as="span"
                 variant="caption"
@@ -67,7 +68,7 @@ export default function WritingPage() {
               >
                 {post.readTime}
               </Typography>
-            </div>
+            </Flex>
             <Typography as="h2" variant="h4" color="white" weight="semibold" className="mt-4">
               {post.title}
             </Typography>
@@ -77,6 +78,6 @@ export default function WritingPage() {
           </Card>
         ))}
       </div>
-    </div>
+    </Flex>
   );
 }

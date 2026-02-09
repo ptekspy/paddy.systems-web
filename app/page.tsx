@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { CallToAction } from "@/components/cta";
 import { Card } from "@/components/ui/card";
 import { BulletList } from "@/components/ui/bullet-list";
+import { Flex } from "@/components/ui/flex";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Typography } from "@/components/ui/typography";
 
@@ -60,10 +61,10 @@ const outputs = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-20">
+    <Flex direction="column" gap="xxl">
       <Card tone="black" padding="xl" className="rounded-[32px] px-8 py-14 md:px-12">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="flex flex-col gap-6">
+          <Flex direction="column" gap="lg">
             <Typography
               as="p"
               variant="caption"
@@ -80,7 +81,7 @@ export default function Home() {
               We translate “We want to do X, but don’t know how” into a clear,
               sequenced assessment that exposes risks before they ship.
             </Typography>
-            <div className="flex flex-wrap gap-4">
+            <Flex wrap="wrap" gap="md">
               <Button as="a" href="/contact" variant="contained" color="white">
                 Book a review
               </Button>
@@ -92,8 +93,8 @@ export default function Home() {
               >
                 White-labelling readiness
               </Button>
-            </div>
-          </div>
+            </Flex>
+          </Flex>
           <Card tone="black" padding="lg" className="bg-white/5">
             <Typography
               as="p"
@@ -124,7 +125,7 @@ export default function Home() {
       </Card>
 
       <Card tone="white" padding="md" className="md:p-8">
-        <div className="flex flex-col gap-3">
+        <Flex direction="column" gap="base">
           <Typography as="h2" variant="h5" color="black" weight="semibold">
             What this helps you decide
           </Typography>
@@ -145,7 +146,7 @@ export default function Home() {
               </Typography>
             </li>
           </ul>
-        </div>
+        </Flex>
       </Card>
 
       <section className="grid gap-8 lg:grid-cols-2">
@@ -177,7 +178,7 @@ export default function Home() {
       </section>
 
       <section className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="flex flex-col gap-6">
+        <Flex direction="column" gap="lg">
           <Typography as="h2" variant="h2" weight="semibold" color="black">
             Why teams call us
           </Typography>
@@ -208,7 +209,7 @@ export default function Home() {
               </li>
             </ul>
           </Card>
-        </div>
+        </Flex>
         <Card tone="black" padding="lg">
           <Typography
             as="p"
@@ -221,40 +222,39 @@ export default function Home() {
           </Typography>
           <ul className="mt-6 space-y-4 text-sm text-zinc-300">
             {outputs.map((output) => (
-              <li key={output} className="flex gap-3">
+              <Flex as="li" key={output} gap="base">
                 <span className="mt-1 h-2 w-2 rounded-full bg-white" />
                 <Typography as="span" variant="small" color="white" className="text-zinc-300">
                   {output}
                 </Typography>
-              </li>
+              </Flex>
             ))}
           </ul>
         </Card>
       </section>
 
-      <Card tone="white" padding="xl">
-        <div className="grid gap-8 lg:grid-cols-3">
-          {steps.map((step, index) => (
-            <Card key={step.title} tone="black" padding="md" className="rounded-2xl">
-              <Typography
-                as="p"
-                variant="caption"
-                color="white"
-                weight="semibold"
-                className="tracking-[0.2em] text-zinc-400"
-              >
-                Step {index + 1}
-              </Typography>
-              <Typography as="h3" variant="h5" color="white" weight="semibold" className="mt-4">
-                {step.title}
-              </Typography>
-              <Typography as="p" variant="small" color="white" className="mt-3 text-zinc-300">
-                {step.body}
-              </Typography>
-            </Card>
-          ))}
-        </div>
-      </Card>
+
+      <div className="grid gap-8 lg:grid-cols-3">
+        {steps.map((step, index) => (
+          <Card key={step.title} tone="black" padding="md" className="rounded-2xl">
+            <Typography
+              as="p"
+              variant="caption"
+              color="white"
+              weight="semibold"
+              className="tracking-[0.2em] text-zinc-400"
+            >
+              Step {index + 1}
+            </Typography>
+            <Typography as="h3" variant="h5" color="white" weight="semibold" className="mt-4">
+              {step.title}
+            </Typography>
+            <Typography as="p" variant="small" color="white" className="mt-3 text-zinc-300">
+              {step.body}
+            </Typography>
+          </Card>
+        ))}
+      </div>
 
       <section className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <Card tone="black" padding="xl">
@@ -316,6 +316,6 @@ export default function Home() {
         buttonLabel="Book a review"
         tone="black"
       />
-    </div>
+    </Flex>
   );
 }

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { CallToAction } from "@/components/cta";
 import { BulletList } from "@/components/ui/bullet-list";
 import { Typography } from "@/components/ui/typography";
+import { Flex } from "@/components/ui/flex";
 import { posts } from "../posts";
 
 export function generateStaticParams() {
@@ -45,8 +46,8 @@ export default function WritingPostPage({
   }
 
   return (
-    <article className="mx-auto flex max-w-3xl flex-col gap-8">
-      <header className="flex flex-col gap-3">
+    <Flex as="article" direction="column" gap="xl" className="mx-auto max-w-3xl">
+      <Flex as="header" direction="column" gap="base">
         <Typography
           as="p"
           variant="caption"
@@ -59,7 +60,7 @@ export default function WritingPostPage({
         <Typography as="h1" variant="h2" color="black" weight="semibold">
           {post.title}
         </Typography>
-        <div className="flex flex-wrap items-center gap-3">
+        <Flex wrap="wrap" align="center" gap="base">
           <Typography
             as="span"
             variant="caption"
@@ -81,10 +82,10 @@ export default function WritingPostPage({
           >
             {post.readTime}
           </Typography>
-        </div>
-      </header>
+        </Flex>
+      </Flex>
 
-      <div className="flex flex-col gap-6">
+      <Flex direction="column" gap="lg">
         {post.sections.map((section, index) => {
           if (section.type === "list") {
             return (
@@ -103,7 +104,7 @@ export default function WritingPostPage({
             </Typography>
           );
         })}
-      </div>
+      </Flex>
 
       <CallToAction
         title="Next step"
@@ -113,6 +114,6 @@ export default function WritingPostPage({
         tone="black"
         align="left"
       />
-    </article>
+    </Flex>
   );
 }

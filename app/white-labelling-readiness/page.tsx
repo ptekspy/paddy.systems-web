@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { CallToAction } from "@/components/cta";
 import { Card } from "@/components/ui/card";
 import { BulletList } from "@/components/ui/bullet-list";
+import { Flex } from "@/components/ui/flex";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Typography } from "@/components/ui/typography";
 
@@ -20,9 +21,9 @@ export const metadata: Metadata = {
 
 export default function WhiteLabellingReadinessPage() {
   return (
-    <div className="flex flex-col gap-16">
+    <Flex direction="column" className="gap-16">
       <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="flex flex-col gap-6">
+        <Flex direction="column" gap="lg">
           <Typography
             as="p"
             variant="caption"
@@ -39,15 +40,15 @@ export default function WhiteLabellingReadinessPage() {
             Know what will break before it breaks. Identify the architectural
             and operational risks of white-labelling before you commit.
           </Typography>
-          <div className="flex flex-wrap items-center gap-4">
+          <Flex wrap="wrap" align="center" gap="md">
             <Button as="a" href="/contact" variant="contained" color="black">
               Request an assessment
             </Button>
             <Button as="a" href="/contact" variant="outlined" color="black">
               Send me a sample report →
             </Button>
-          </div>
-        </div>
+          </Flex>
+        </Flex>
         <Card tone="black" padding="lg">
           <Typography
             as="p"
@@ -124,6 +125,6 @@ export default function WhiteLabellingReadinessPage() {
         buttonLabel="Request an assessment"
         tone="black"
       />
-    </div>
+    </Flex>
   );
 }

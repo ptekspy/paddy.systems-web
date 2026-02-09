@@ -1,5 +1,6 @@
 import * as React from "react";
 import { twMerge } from "tailwind-merge";
+import { Flex } from "@/components/ui/flex";
 import { Typography } from "@/components/ui/typography";
 
 type SectionHeadingProps = {
@@ -20,7 +21,7 @@ export function SectionHeading({
     tone === "white" ? "text-zinc-300" : "text-zinc-600";
 
   return (
-    <div className={twMerge("flex flex-col gap-3", className)}>
+    <Flex direction="column" gap="base" className={twMerge("", className)}>
       <Typography as="h2" variant="h3" color={titleColor} weight="semibold">
         {title}
       </Typography>
@@ -34,6 +35,6 @@ export function SectionHeading({
           {subtitle}
         </Typography>
       ) : null}
-    </div>
+    </Flex>
   );
 }

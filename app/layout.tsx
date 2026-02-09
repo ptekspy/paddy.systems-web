@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Button } from "@/components/ui/button";
+import { Flex } from "@/components/ui/flex";
 import { Typography } from "@/components/ui/typography";
 import "./globals.css";
 
@@ -39,13 +40,23 @@ export default function RootLayout({
       >
         <div className="min-h-screen">
           <header className="sticky top-0 z-20 border-b border-zinc-200/70 bg-white/80 backdrop-blur">
-            <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
+            <Flex
+              align="center"
+              justify="between"
+              className="mx-auto w-full max-w-6xl px-6 py-4"
+            >
               <a href="/" className="tracking-tight text-zinc-900">
                 <Typography as="span" variant="h6" weight="semibold">
                   paddy.systems
                 </Typography>
               </a>
-              <nav className="hidden items-center gap-6 text-sm font-medium text-zinc-600 md:flex">
+              <Flex
+                as="nav"
+                display={{ base: "hidden", md: "flex" }}
+                align="center"
+                gap="lg"
+                className="text-sm font-medium text-zinc-600"
+              >
                 <a href="/white-labelling-readiness" className="hover:text-zinc-900">
                   <Typography as="span" variant="small" weight="medium">
                     Product
@@ -61,8 +72,8 @@ export default function RootLayout({
                     Contact
                   </Typography>
                 </a>
-              </nav>
-              <div className="flex items-center gap-3">
+              </Flex>
+              <Flex align="center" gap="base">
                 <Button
                   as="a"
                   href="/contact"
@@ -72,14 +83,20 @@ export default function RootLayout({
                 >
                   Request an assessment
                 </Button>
-              </div>
-            </div>
+              </Flex>
+            </Flex>
           </header>
           <main className="mx-auto w-full max-w-6xl px-6 py-16">
             {children}
           </main>
           <footer className="border-t border-zinc-200/70 bg-white">
-            <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 py-10 text-sm text-zinc-600 md:flex-row md:items-center md:justify-between">
+            <Flex
+              direction={{ base: "column", md: "row" }}
+              align={{ base: "stretch", md: "center" }}
+              justify={{ base: "start", md: "between" }}
+              gap="lg"
+              className="mx-auto w-full max-w-6xl px-6 py-10 text-sm text-zinc-600"
+            >
               <div>
                 <Typography as="p" variant="small" weight="semibold" color="black">
                   paddy.systems
@@ -88,7 +105,7 @@ export default function RootLayout({
                   Change-readiness assessments for high-risk product change.
                 </Typography>
               </div>
-              <div className="flex flex-wrap gap-4">
+              <Flex wrap="wrap" gap="md">
                 <a href="/white-labelling-readiness" className="hover:text-zinc-900">
                   <Typography as="span" variant="small">
                     White-labelling readiness
@@ -109,8 +126,8 @@ export default function RootLayout({
                     Privacy
                   </Typography>
                 </a>
-              </div>
-            </div>
+              </Flex>
+            </Flex>
           </footer>
         </div>
       </body>

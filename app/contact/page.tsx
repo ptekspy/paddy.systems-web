@@ -8,6 +8,7 @@ import { Typography } from "@/components/ui/typography";
 import { Card } from "@/components/ui/card";
 import { BulletList } from "@/components/ui/bullet-list";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Flex } from "@/components/ui/flex";
 
 export const metadata: Metadata = {
   title: "Contact — paddy.systems",
@@ -23,8 +24,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="flex flex-col gap-12">
-      <section className="flex flex-col gap-4">
+    <Flex direction="column" className="gap-12">
+      <Flex as="section" direction="column" gap="md">
         <Typography
           as="p"
           variant="caption"
@@ -41,7 +42,7 @@ export default function ContactPage() {
           Share a short description of the change you’re considering. You’ll get
           a response within two business days.
         </Typography>
-      </section>
+      </Flex>
 
       <section className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <Card
@@ -102,7 +103,7 @@ export default function ContactPage() {
           </div>
         </Card>
 
-        <div className="flex flex-col gap-6">
+        <Flex direction="column" gap="lg">
           <Card tone="black" padding="md">
             <SectionHeading title="What to expect" tone="white" />
             <BulletList
@@ -130,8 +131,8 @@ export default function ContactPage() {
               .
             </Typography>
           </Card>
-        </div>
+        </Flex>
       </section>
-    </div>
+    </Flex>
   );
 }
