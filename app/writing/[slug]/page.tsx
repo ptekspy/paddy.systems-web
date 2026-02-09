@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CallToAction } from "@/components/cta";
+import { BulletList } from "@/components/ui/bullet-list";
 import { Typography } from "@/components/ui/typography";
 import { posts } from "../posts";
 
@@ -87,15 +88,12 @@ export default function WritingPostPage({
         {post.sections.map((section, index) => {
           if (section.type === "list") {
             return (
-              <ul key={index} className="list-disc space-y-2 pl-6">
-                {section.content.map((item) => (
-                  <li key={item}>
-                    <Typography as="span" variant="p" color="black">
-                      {item}
-                    </Typography>
-                  </li>
-                ))}
-              </ul>
+              <BulletList
+                key={index}
+                items={section.content}
+                tone="black"
+                className="pl-6"
+              />
             );
           }
 

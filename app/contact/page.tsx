@@ -6,6 +6,8 @@ import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Typography } from "@/components/ui/typography";
 import { Card } from "@/components/ui/card";
+import { BulletList } from "@/components/ui/bullet-list";
+import { SectionHeading } from "@/components/ui/section-heading";
 
 export const metadata: Metadata = {
   title: "Contact — paddy.systems",
@@ -102,31 +104,19 @@ export default function ContactPage() {
 
         <div className="flex flex-col gap-6">
           <Card tone="black" padding="md">
-            <Typography as="h2" variant="h5" color="white" weight="semibold">
-              What to expect
-            </Typography>
-            <ul className="mt-4 space-y-3">
-              <li>
-                <Typography as="span" variant="small" color="white" className="text-zinc-300">
-                  Initial response within two business days.
-                </Typography>
-              </li>
-              <li>
-                <Typography as="span" variant="small" color="white" className="text-zinc-300">
-                  Clarifying call if the change is complex.
-                </Typography>
-              </li>
-              <li>
-                <Typography as="span" variant="small" color="white" className="text-zinc-300">
-                  Assessment delivered in 1–2 weeks.
-                </Typography>
-              </li>
-            </ul>
+            <SectionHeading title="What to expect" tone="white" />
+            <BulletList
+              tone="white"
+              className="mt-4"
+              items={[
+                "Initial response within two business days.",
+                "Clarifying call if the change is complex.",
+                "Assessment delivered in 1–2 weeks.",
+              ]}
+            />
           </Card>
           <Card tone="black" padding="md">
-            <Typography as="h2" variant="h5" color="white" weight="semibold">
-              Prefer email?
-            </Typography>
+            <SectionHeading title="Prefer email?" tone="white" />
             <Typography as="p" variant="small" color="white" className="mt-2 text-zinc-300">
               Send a note directly to
               <a

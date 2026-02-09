@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { CallToAction } from "@/components/cta";
 import { Card } from "@/components/ui/card";
+import { BulletList } from "@/components/ui/bullet-list";
+import { SectionHeading } from "@/components/ui/section-heading";
 import { Typography } from "@/components/ui/typography";
 
 export const metadata: Metadata = {
@@ -89,53 +91,29 @@ export default function WhiteLabellingReadinessPage() {
 
       <section className="grid gap-8 md:grid-cols-2">
         <Card tone="black" padding="md" className="rounded-2xl">
-          <Typography as="h2" variant="h4" color="white" weight="semibold">
-            Assessment outputs
-          </Typography>
-          <ul className="mt-4 space-y-3">
-            <li>
-              <Typography as="span" variant="small" color="white" className="text-zinc-300">
-                Tenant boundary decisions and trade-offs.
-              </Typography>
-            </li>
-            <li>
-              <Typography as="span" variant="small" color="white" className="text-zinc-300">
-                Risk hotspots with mitigation strategies.
-              </Typography>
-            </li>
-            <li>
-              <Typography as="span" variant="small" color="white" className="text-zinc-300">
-                Sequencing plan and proof milestones.
-              </Typography>
-            </li>
-            <li>
-              <Typography as="span" variant="small" color="white" className="text-zinc-300">
-                “Don’t do this” list for anti-patterns.
-              </Typography>
-            </li>
-          </ul>
+          <SectionHeading title="Assessment outputs" tone="white" />
+          <BulletList
+            tone="white"
+            className="mt-4"
+            items={[
+              "Tenant boundary decisions and trade-offs.",
+              "Risk hotspots with mitigation strategies.",
+              "Sequencing plan and proof milestones.",
+              "“Don’t do this” list for anti-patterns.",
+            ]}
+          />
         </Card>
         <Card tone="black" padding="md" className="rounded-2xl">
-          <Typography as="h2" variant="h4" color="white" weight="semibold">
-            Example sections
-          </Typography>
-          <ul className="mt-4 space-y-3">
-            <li>
-              <Typography as="span" variant="small" color="white" className="text-zinc-300">
-                Sample risk statements and impact grading.
-              </Typography>
-            </li>
-            <li>
-              <Typography as="span" variant="small" color="white" className="text-zinc-300">
-                Plan headings and phase sequencing.
-              </Typography>
-            </li>
-            <li>
-              <Typography as="span" variant="small" color="white" className="text-zinc-300">
-                Decision matrix for tenant separation.
-              </Typography>
-            </li>
-          </ul>
+          <SectionHeading title="Example sections" tone="white" />
+          <BulletList
+            tone="white"
+            className="mt-4"
+            items={[
+              "Sample risk statements and impact grading.",
+              "Plan headings and phase sequencing.",
+              "Decision matrix for tenant separation.",
+            ]}
+          />
         </Card>
       </section>
 

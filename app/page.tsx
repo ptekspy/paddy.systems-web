@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { CallToAction } from "@/components/cta";
 import { Card } from "@/components/ui/card";
+import { BulletList } from "@/components/ui/bullet-list";
+import { SectionHeading } from "@/components/ui/section-heading";
 import { Typography } from "@/components/ui/typography";
 
 export const metadata: Metadata = {
@@ -148,60 +150,29 @@ export default function Home() {
 
       <section className="grid gap-8 lg:grid-cols-2">
         <Card tone="black" padding="lg">
-          <Typography as="h2" variant="h3" color="white" weight="semibold">
-            What you get
-          </Typography>
-          <ul className="mt-6 space-y-4">
-            <li className="flex gap-3">
-              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <Typography as="span" variant="small" color="white" className="text-zinc-300">
-                Summary of risks.
-              </Typography>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <Typography as="span" variant="small" color="white" className="text-zinc-300">
-                Suggested sequence and priorities.
-              </Typography>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <Typography as="span" variant="small" color="white" className="text-zinc-300">
-                Follow-up notes delivered within 24–48h.
-              </Typography>
-            </li>
-          </ul>
+          <SectionHeading title="What you get" tone="white" />
+          <BulletList
+            tone="white"
+            className="mt-6"
+            items={[
+              "Summary of risks.",
+              "Suggested sequence and priorities.",
+              "Follow-up notes delivered within 24–48h.",
+            ]}
+          />
         </Card>
         <Card tone="black" padding="lg">
-          <Typography as="h2" variant="h3" color="white" weight="semibold">
-            Typical topics
-          </Typography>
-          <ul className="mt-6 space-y-4">
-            <li className="flex gap-3">
-              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <Typography as="span" variant="small" color="white" className="text-zinc-300">
-                Migrations and platform re-architecture.
-              </Typography>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <Typography as="span" variant="small" color="white" className="text-zinc-300">
-                White-labelling and tenancy boundaries.
-              </Typography>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <Typography as="span" variant="small" color="white" className="text-zinc-300">
-                Performance under load.
-              </Typography>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <Typography as="span" variant="small" color="white" className="text-zinc-300">
-                Reliability and observability gaps.
-              </Typography>
-            </li>
-          </ul>
+          <SectionHeading title="Typical topics" tone="white" />
+          <BulletList
+            tone="white"
+            className="mt-6"
+            items={[
+              "Migrations and platform re-architecture.",
+              "White-labelling and tenancy boundaries.",
+              "Performance under load.",
+              "Reliability and observability gaps.",
+            ]}
+          />
         </Card>
       </section>
 

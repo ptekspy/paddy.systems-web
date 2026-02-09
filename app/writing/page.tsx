@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Card } from "@/components/ui/card";
+import { SectionHeading } from "@/components/ui/section-heading";
 import { Typography } from "@/components/ui/typography";
 import { posts } from "./posts";
 
@@ -28,13 +29,10 @@ export default function WritingPage() {
         >
           Writing
         </Typography>
-        <Typography as="h1" variant="h2" color="black" weight="semibold">
-          Systems planning notes
-        </Typography>
-        <Typography as="p" variant="body" color="black" className="max-w-2xl text-zinc-600">
-          Short, structured posts about change-readiness, white-labelling, and
-          sequencing complex platform work.
-        </Typography>
+        <SectionHeading
+          title="Systems planning notes"
+          subtitle="Short, structured posts about change-readiness, white-labelling, and sequencing complex platform work."
+        />
       </section>
 
       <div className="grid gap-6">
