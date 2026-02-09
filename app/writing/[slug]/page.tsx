@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CallToAction } from "@/components/cta";
-import { BulletList } from "@/components/ui/bullet-list";
-import { Typography } from "@/components/ui/typography";
-import { Flex } from "@/components/ui/flex";
+import { CallToAction } from "@/components/marketing/call-to-action";
+import { BulletList } from "@/components/lists/bullet-list";
+import { Typography } from "@/components/typography/typography";
+import { Flex } from "@/components/layout/flex";
 import { posts } from "../posts";
 
 export function generateStaticParams() {

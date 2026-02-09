@@ -4,7 +4,7 @@ import * as React from "react";
 import Link, { type LinkProps } from "next/link";
 import { cva, type VariantProps } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";
-import { Typography } from "@/components/ui/typography";
+import { Typography } from "@/components/typography/typography";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center rounded-full transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:pointer-events-none disabled:opacity-50 data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50",
@@ -40,7 +40,8 @@ const buttonVariants = cva(
       {
         variant: "outlined",
         color: "black",
-        className: "border-zinc-300 text-zinc-900 hover:border-zinc-400 hover:bg-zinc-50",
+        className:
+          "border-zinc-300 text-zinc-900 hover:border-zinc-400 hover:bg-zinc-50",
       },
       {
         variant: "outlined",
@@ -93,10 +94,7 @@ export const Button = React.forwardRef<
   ButtonProps
 >(({ as = "button", variant, color, size, className, children, ...props }, ref) => {
   const isDisabled = "disabled" in props ? Boolean(props.disabled) : false;
-  const classes = twMerge(
-    buttonVariants({ variant, color, size }),
-    className
-  );
+  const classes = twMerge(buttonVariants({ variant, color, size }), className);
 
   const contentColor: "white" | "black" =
     variant === "contained"

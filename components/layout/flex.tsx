@@ -195,10 +195,7 @@ export function Flex<T extends React.ElementType = "div">({
 
   return (
     <Component
-      className={twMerge(
-        responsiveClasses.join(" "),
-        className
-      )}
+      className={twMerge(responsiveClasses.join(" "), className)}
       {...props}
     />
   );

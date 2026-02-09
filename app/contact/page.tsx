@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Select } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { Typography } from "@/components/ui/typography";
-import { Card } from "@/components/ui/card";
-import { BulletList } from "@/components/ui/bullet-list";
-import { SectionHeading } from "@/components/ui/section-heading";
-import { Flex } from "@/components/ui/flex";
+import { Button } from "@/components/actions/button";
+import { Input } from "@/components/forms/input";
+import { Label } from "@/components/forms/label";
+import { Select } from "@/components/forms/select";
+import { Textarea } from "@/components/forms/textarea";
+import { Typography } from "@/components/typography/typography";
+import { Card } from "@/components/layout/card";
+import { BulletList } from "@/components/lists/bullet-list";
+import { SectionHeading } from "@/components/layout/section-heading";
+import { Flex } from "@/components/layout/flex";
 
 export const metadata: Metadata = {
   title: "Contact — paddy.systems",
@@ -106,15 +106,11 @@ export default function ContactPage() {
         <Flex direction="column" gap="lg">
           <Card tone="black" padding="md">
             <SectionHeading title="What to expect" tone="white" />
-            <BulletList
-              tone="white"
-              className="mt-4"
-              items={[
-                "Initial response within two business days.",
-                "Clarifying call if the change is complex.",
-                "Assessment delivered in 1–2 weeks.",
-              ]}
-            />
+            <BulletList tone="white" className="mt-4">
+              <li>Initial response within two business days.</li>
+              <li>Clarifying call if the change is complex.</li>
+              <li>Assessment delivered in 1–2 weeks.</li>
+            </BulletList>
           </Card>
           <Card tone="black" padding="md">
             <SectionHeading title="Prefer email?" tone="white" />

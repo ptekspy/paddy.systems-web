@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Button } from "@/components/ui/button";
-import { CallToAction } from "@/components/cta";
-import { Card } from "@/components/ui/card";
-import { BulletList } from "@/components/ui/bullet-list";
-import { Flex } from "@/components/ui/flex";
-import { SectionHeading } from "@/components/ui/section-heading";
-import { Typography } from "@/components/ui/typography";
+import { Button } from "@/components/actions/button";
+import { CallToAction } from "@/components/marketing/call-to-action";
+import { Card } from "@/components/layout/card";
+import { BulletList } from "@/components/lists/bullet-list";
+import { Flex } from "@/components/layout/flex";
+import { SectionHeading } from "@/components/layout/section-heading";
+import { Typography } from "@/components/typography/typography";
 
 export const metadata: Metadata = {
   title: "paddy.systems — Change-readiness assessments",
@@ -152,28 +152,20 @@ export default function Home() {
       <section className="grid gap-8 lg:grid-cols-2">
         <Card tone="black" padding="lg">
           <SectionHeading title="What you get" tone="white" />
-          <BulletList
-            tone="white"
-            className="mt-6"
-            items={[
-              "Summary of risks.",
-              "Suggested sequence and priorities.",
-              "Follow-up notes delivered within 24–48h.",
-            ]}
-          />
+          <BulletList tone="white" className="mt-6">
+            <li>Summary of risks.</li>
+            <li>Suggested sequence and priorities.</li>
+            <li>Follow-up notes delivered within 24–48h.</li>
+          </BulletList>
         </Card>
         <Card tone="black" padding="lg">
           <SectionHeading title="Typical topics" tone="white" />
-          <BulletList
-            tone="white"
-            className="mt-6"
-            items={[
-              "Migrations and platform re-architecture.",
-              "White-labelling and tenancy boundaries.",
-              "Performance under load.",
-              "Reliability and observability gaps.",
-            ]}
-          />
+          <BulletList tone="white" className="mt-6">
+            <li>Migrations and platform re-architecture.</li>
+            <li>White-labelling and tenancy boundaries.</li>
+            <li>Performance under load.</li>
+            <li>Reliability and observability gaps.</li>
+          </BulletList>
         </Card>
       </section>
 

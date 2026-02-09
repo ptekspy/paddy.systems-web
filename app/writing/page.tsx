@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Card } from "@/components/ui/card";
-import { SectionHeading } from "@/components/ui/section-heading";
-import { Typography } from "@/components/ui/typography";
-import { Flex } from "@/components/ui/flex";
+import { Card } from "@/components/layout/card";
+import { SectionHeading } from "@/components/layout/section-heading";
+import { Typography } from "@/components/typography/typography";
+import { Flex } from "@/components/layout/flex";
 import { posts } from "./posts";
 
 export const metadata: Metadata = {

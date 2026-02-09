@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Button } from "@/components/ui/button";
-import { CallToAction } from "@/components/cta";
-import { Card } from "@/components/ui/card";
-import { BulletList } from "@/components/ui/bullet-list";
-import { Flex } from "@/components/ui/flex";
-import { SectionHeading } from "@/components/ui/section-heading";
-import { Typography } from "@/components/ui/typography";
+import { Button } from "@/components/actions/button";
+import { CallToAction } from "@/components/marketing/call-to-action";
+import { Card } from "@/components/layout/card";
+import { BulletList } from "@/components/lists/bullet-list";
+import { Flex } from "@/components/layout/flex";
+import { SectionHeading } from "@/components/layout/section-heading";
+import { Typography } from "@/components/typography/typography";
 
 export const metadata: Metadata = {
   title: "White-labelling readiness — paddy.systems",

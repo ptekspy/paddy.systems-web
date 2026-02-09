@@ -1,7 +1,7 @@
 import * as React from "react";
 import { twMerge } from "tailwind-merge";
-import { Flex } from "@/components/ui/flex";
-import { Typography } from "@/components/ui/typography";
+import { Flex } from "@/components/layout/flex";
+import { Typography } from "@/components/typography/typography";
 
 type SectionHeadingProps = {
   title: string;

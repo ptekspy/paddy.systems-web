@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Flex } from "@/components/ui/flex";
-import { Typography } from "@/components/ui/typography";
+import { Flex } from "@/components/layout/flex";
+import { Typography } from "@/components/typography/typography";
 
 export const metadata: Metadata = {
   title: "Privacy — paddy.systems",
